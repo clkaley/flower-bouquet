@@ -1,11 +1,13 @@
-import Content from '../components/Content'
-import CollectionsCard from '../components/CollectionsCard'
-import { getAllCollections } from '../lib/shopify'
-export default function Home({collections}) {
+import React from 'react'
+import CollectionsCard from '../../components/CollectionsCard';
+import { getAllCollections } from '../../lib/shopify'
+
+export default  function Collections({collections}) {
+  console.log("collections ",collections[0].node.handle);
+
   return (
     <>
-      <Content/>
-      <div className="bg-white">
+ <div className="bg-white">
       <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <h2 className="text-xl font-bold text-pink-400 mb-6">
           Collections
@@ -31,3 +33,4 @@ export async function getServerSideProps({context}) {
     props: { collections }, 
   }
 }
+
