@@ -25,7 +25,7 @@ export default function Cart() {
 
       {items.length<1 && <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
       <h2 className="whitespace-pre-wrap max-w-prose font-bold text-sm text-pink-500">
-        Shopping cart is empty
+        No Flowers in the Bouquet
       </h2>
       
       <button

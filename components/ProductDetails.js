@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { useState } from 'react';
 import {useBasket} from '../context/basketContext'
 
+
 function ProductDetails({product}) {
   const router = useRouter();
 
@@ -24,6 +25,7 @@ function ProductDetails({product}) {
   const available=product.variants.edges[0].node.availableForSale
   
   const findBasketItem=items.find((item)=>item.id===product.id)
+
 
   return (
     <>
@@ -64,7 +66,7 @@ function ProductDetails({product}) {
           </button>
       }
       <br />
-      <button  className="bg-pink-300  rounded-lg text-white px-2 py-2 mb-2 hover:bg-pink-400"  onClick={() => router.push('/products')}> Back to Product</button>
+      <button  className="bg-pink-300  rounded-lg text-white px-2 py-2 mb-2 hover:bg-pink-400"  onClick={() => router.push('/products')}> Back to Flowers</button>
     
 </div>
       
