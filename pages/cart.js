@@ -14,14 +14,14 @@ export default function Cart() {
   
   const router = useRouter()
 
-  console.log("ürünün fiyatı ",Number(items[0].variants.edges[0].node.priceV2.amount));
+  //console.log("ürünün fiyatı ",Number(items[0].variants.edges[0].node.priceV2.amount));
   
   //bunu düşün toplam adet kadar sepete ekleyebilirsin
-  console.log("ürünün toplam adeti :",items[0].collections.edges[0].node.products.edges[0].node.totalInventory);
+  //console.log("ürünün toplam adeti :",items[0].collections.edges[0].node.products.edges[0].node.totalInventory);
 
   return (
     <>
-    <button  className="bg-pink-300 mt-5 mx-5 rounded-lg text-white px-2 py-2 mb-2 hover:bg-pink-400" onClick={() => router.push('/products')}>Continue Shopping</button>
+    
 
       {items.length<1 && <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
       <h2 className="whitespace-pre-wrap max-w-prose font-bold text-sm text-pink-500">
@@ -39,6 +39,7 @@ export default function Cart() {
 
       {items.length>0 && (
         <div className='  grid justify-items-center text-center'>
+          <button  className="bg-pink-300 mt-5 mx-5 rounded-lg text-white px-2 py-2 mb-2 hover:bg-pink-400" onClick={() => router.push('/products')}>Continue Shopping</button>
             <ul className='p-5  '>
               {
                 items.map((item)=>(
