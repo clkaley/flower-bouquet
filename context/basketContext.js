@@ -20,6 +20,11 @@ const BasketProvider=({children})=>{
         const filtered=items.filter((item)=>item.id !==findBasketItem.id)
         setItems(filtered)
     };
+
+    const removeProduct=(item_id)=>{
+        const filtered=items.filter((item)=>item.id !==item_id)
+        setItems(filtered)
+    }
 /*
     const removeProduct=()=>{
         const filtered=items.filter((item)=>item.id !==item.id)
@@ -30,6 +35,7 @@ const BasketProvider=({children})=>{
         items,
         setItems,
         addToProduct,
+        removeProduct,
     }
 
     

@@ -11,7 +11,7 @@ const Layout = ({children}) => {
   const {items}=useBasket()
   
 
-console.log(children);
+//console.log(children);
   return (
     <>
         <nav className=' flex-col bg-neutral-50 flex items-center h-2 p-6 md:p-4 lg:p-12 sticky backdrop-blur-lg z-40 top-0  w-full leading-none gap- antialiased transition shadow-sm justify-center' >

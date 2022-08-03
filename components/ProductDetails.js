@@ -6,12 +6,13 @@ import { useState } from 'react';
 import {useBasket} from '../context/basketContext'
 
 function ProductDetails({product}) {
-
-  const {addToProduct,items}=useBasket();
-  console.log("add to product",product);
   const router = useRouter();
 
- 
+  const {addToProduct,items}=useBasket();
+
+
+//sayı adedi
+  console.log(" product totalInventory",product.collections.edges[0].node.products.edges[0].node.totalInventory);
 
 
 

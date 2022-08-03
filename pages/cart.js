@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 export default function Cart() {
 
-  const {items}=useBasket();
+  const {items,removeProduct}=useBasket();
   
   const total=items.reduce((acc,obj)=>acc+Number(obj.variants.edges[0].node.priceV2.amount),0)
   
@@ -61,9 +61,9 @@ export default function Cart() {
           </div>
           <div className='flex items-center'>
         <button  className="inline-block rounded-sm mt-3 
-        font-medium text-center py-3 px-4  leading-none bg-pink-300 text-white w-50" onClick={()=>{
+        font-medium text-center py-3 px-4  leading-none bg-pink-300 text-white w-50" onClick={()=>removeProduct(item.id)
         
-        }}>Remove to Bouquet</button>
+        }>Remove to Bouquet</button>
               </div>  
                   </li>
                 ))
