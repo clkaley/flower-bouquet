@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
-
+import { BasketProvider } from '../context/basketContext'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
@@ -12,10 +12,12 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/cicek.png" />
     </Head>
 
-  <Layout>
-    <Component {...pageProps} />
-  </Layout>
- 
+    <BasketProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </BasketProvider>
+
   </>
   )
 }

@@ -5,7 +5,7 @@ import Head from 'next/head'
 
 //!Tek bir ürün kartı için ProductCard.js oluşturuldu.
 const ProductCard = ({ product}) => {
-    console.log("Product Card ",product.node.title);
+    //console.log("Product Card ",product.node.title);
     /*
  
 

@@ -1,11 +1,16 @@
 import React from 'react'
 import Link from 'next/link'
 import Content from './Content';
-
+import { useContext } from 'react';
+import CartContext from '../context/basketContext';
+import { useBasket } from '../context/basketContext';
 
 
 
 const Layout = ({children}) => {
+  const {items}=useBasket()
+  
+
 console.log(children);
   return (
     <>
@@ -26,7 +31,7 @@ console.log(children);
                 </Link>
                 <Link href="/cart">
                   <a href="">
-                  Cart
+                  Cart ({items.length})
                   </a>
                 </Link>
                 <Link href="/login">
