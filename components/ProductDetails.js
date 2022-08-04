@@ -11,6 +11,7 @@ function ProductDetails({product}) {
 
   const {addToProduct,items}=useBasket();
 
+  //console.log("Product details+++ items",items);
 
 //sayı adedi
   console.log(" product totalInventory",product.collections.edges[0].node.products.edges[0].node.totalInventory);

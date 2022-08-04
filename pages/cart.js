@@ -3,16 +3,35 @@ import { useRouter } from 'next/router'
 import { useBasket } from '../context/basketContext'
 import Link from 'next/link';
 import Image from 'next/image';
-export default function Cart() {
 
-  const {items,removeProduct}=useBasket();
+
+export default function Cart() {
+  //yönlendirme için
+  const router = useRouter();
+
+  //contexten alınanlar
+  const {items,removeProduct,setItems}=useBasket();
   
-  const total=items.reduce((acc,obj)=>acc+Number(obj.variants.edges[0].node.priceV2.amount),0)
+
+  //ürünlerin toplam fiyatını yazdıran fonksiyon
+  const total=items.reduce((acc,item)=>acc+Number(item.variants.edges[0].node.priceV2.amount),0)
   
+
+  //console.log("item quantity",items[0].collections.edges[0].node.products.edges[0].node.totalInventory);
+
+
+
+const increment=(item_id)=>{
+  console.log("incremente basıldı",item_id);
+  const newCount = items.find((item) => item.id === item_id);
+  console.log("new",newCount);
   
-  console.log("cart ürünleri  ",items);
-  
-  const router = useRouter()
+}
+
+const decrement=(item_id)=>{
+  console.log("decremente basıldı",item_id);
+}
+
 
   //console.log("ürünün fiyatı ",Number(items[0].variants.edges[0].node.priceV2.amount));
   
@@ -59,6 +78,12 @@ export default function Cart() {
               objectFit="cover"
             /> 
           </div>
+          <br />
+          <button onClick={() => decrement(item.id)}>Remove</button>
+          <br />
+       
+          <button  onClick={() => increment(item.id)}>Add</button>
+
           <div className='flex items-center'>
         <button  className="inline-block rounded-sm mt-3 
         font-medium text-center py-3 px-4  leading-none bg-pink-300 text-white w-50" onClick={()=>removeProduct(item.id)
