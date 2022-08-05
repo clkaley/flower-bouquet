@@ -23,7 +23,7 @@ export default function Cart() {
 
 const increment=(item_id)=>{
   console.log("incremente basıldı",item_id);
-  const newCount = items.find((item) => item.id === item_id);
+  const newCount = items.find((item) => !item.id === item_id);
   console.log("new",newCount);
   
 }
@@ -68,7 +68,7 @@ const decrement=(item_id)=>{
                   <br /> 
                   {item.description}
                     <br />
-                  {items[0].variants.edges[0].node.priceV2.amount}
+                  {item.variants.edges[0].node.priceV2.amount}
                   <div className="mt-5 relative group-hover:opacity-75 h-56 w-56">
              <Image 
               src={item.images.edges[0].node.src}
